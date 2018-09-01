@@ -37,8 +37,6 @@ def NOTIFIED_INVITE_INTO_GROUP(op):
 oepoll.addOpInterruptWithDict({
     OpType.NOTIFIED_INVITE_INTO_GROUP: NOTIFIED_INITE_INTO_GROUP
 
-
-
 while True:
     oepoll.trace()
     
