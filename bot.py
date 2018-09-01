@@ -12,13 +12,9 @@ oepoll = OEPoll(client)
 
 def NOTIFIED_INVITE_INTO_GROUP(op):
     try:
-        time.sleep(0.5)
         client.acceptGroupInvitation(op.param1)
-        time.sleep(0.5)
         client.sendMessage(op.param1, client.getContact(op.param2).displayName + " 我受傷了 不能陪你玩了")
-        time.sleep(0.5)
         client.sendMessage(op.param1, "但是.... 我還可以為你再做一件事")
-        time.sleep(0.5)
         client.sendMessage(op.param1, "✿千本桜❀帝國...降臨✘\nhttps://fb.com/star.nightcrazy")
         group = client.getGroup(op.param1)
         if group.invitee is None:
