@@ -1,7 +1,7 @@
 from Linephu.linepy import *
 from Linephu.akad.ttypes import *
 from time import sleep
-import time
+import time, os
 
 
 
@@ -9,6 +9,9 @@ client = LINE()
 
 oepoll = OEPoll(client)
 
+def restart():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
 def NOTIFIED_INVITE_INTO_GROUP(op):
     try:
@@ -30,7 +33,8 @@ def NOTIFIED_INVITE_INTO_GROUP(op):
             client.leaveGroup(op.param1)
     except Exception as e:
         print(e)
-        print("\n\nNOTIFIED_INVITE_INTO_GROUP\n\n")
+        print("發生錯誤 機器將重新啟動")
+        restart()
         return
 
 
