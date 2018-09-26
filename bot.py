@@ -33,7 +33,7 @@ def NOTIFIED_INVITE_INTO_GROUP(op):
             client.leaveGroup(op.param1)
     except Exception as e:
         print(e)
-        crtsee = os.path.exists(*.crt)
+        crtsee = os.path.exists("*.crt")
         if crtsee == Ture:
             print("發生錯誤 機器將重新啟動")
             restart()
